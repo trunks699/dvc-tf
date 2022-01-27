@@ -12,7 +12,6 @@ os.makedirs(log_dir, exist_ok=True)
 logging.basicConfig(filename=os.path.join(log_dir, 'running_logs.log'), level=logging.INFO, format=logging_str,
                     filemode="a")
 
-
 def copy_file(source_download_dir, local_data_dir):
     list_of_files = os.listdir(source_download_dir)
     N = len(list_of_files)
@@ -24,8 +23,8 @@ def copy_file(source_download_dir, local_data_dir):
 def get_data(config_path):
     config = read_yaml(config_path)
 
-    source_download_dirs = config["source_data"]
-    local_data_dirs = config["local_data"]
+    source_download_dirs = config["source_download_dirs"]
+    local_data_dirs = config["local_data_dirs"]
 
     for source_download_dir, local_data_dir in tqdm(zip(source_download_dirs, local_data_dirs), total=2, desc= "list of folders", colour="red"):
         create_directory([local_data_dir])
