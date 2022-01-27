@@ -1,0 +1,55 @@
+[2022-01-27 23:17:07,425: INFO: stage2_prepare_base_model]: >>>>> stage two started
+[2022-01-27 23:17:07,426: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-01-27 23:17:07,426: ERROR: stage2_prepare_base_model]: [Errno 2] No such file or directory: 'params.yaml'
+Traceback (most recent call last):
+  File "/home/subhadip/Desktop/dvc-tf/src/stage2_prepare_base_model.py", line 67, in <module>
+    prepare_base_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "/home/subhadip/Desktop/dvc-tf/src/stage2_prepare_base_model.py", line 16, in prepare_base_model
+    params = read_yaml(params_path)
+  File "/home/subhadip/Desktop/dvc-tf/src/utils/all_utils.py", line 8, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'params.yaml'
+[2022-01-27 23:17:28,519: INFO: stage2_prepare_base_model]: >>>>> stage two started
+[2022-01-27 23:17:28,520: INFO: all_utils]: yaml file: ./config/config.yaml loaded successfully
+[2022-01-27 23:17:28,520: ERROR: stage2_prepare_base_model]: [Errno 2] No such file or directory: './params.yaml'
+Traceback (most recent call last):
+  File "/home/subhadip/Desktop/dvc-tf/src/stage2_prepare_base_model.py", line 67, in <module>
+    prepare_base_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "/home/subhadip/Desktop/dvc-tf/src/stage2_prepare_base_model.py", line 16, in prepare_base_model
+    params = read_yaml(params_path)
+  File "/home/subhadip/Desktop/dvc-tf/src/utils/all_utils.py", line 8, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+FileNotFoundError: [Errno 2] No such file or directory: './params.yaml'
+[2022-01-27 23:18:18,981: INFO: stage2_prepare_base_model]: >>>>> stage two started
+[2022-01-27 23:18:18,983: INFO: all_utils]: yaml file: ./config/config.yaml loaded successfully
+[2022-01-27 23:18:18,983: ERROR: stage2_prepare_base_model]: [Errno 2] No such file or directory: './params.yaml'
+Traceback (most recent call last):
+  File "/home/subhadip/Desktop/dvc-tf/src/stage2_prepare_base_model.py", line 67, in <module>
+    prepare_base_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "/home/subhadip/Desktop/dvc-tf/src/stage2_prepare_base_model.py", line 16, in prepare_base_model
+    params = read_yaml(params_path)
+  File "/home/subhadip/Desktop/dvc-tf/src/utils/all_utils.py", line 8, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+FileNotFoundError: [Errno 2] No such file or directory: './params.yaml'
+[2022-01-27 23:18:24,771: INFO: stage2_prepare_base_model]: >>>>> stage two started
+[2022-01-27 23:18:24,773: INFO: all_utils]: yaml file: ./config/config.yaml loaded successfully
+[2022-01-27 23:18:24,773: ERROR: stage2_prepare_base_model]: [Errno 2] No such file or directory: './params.yaml'
+Traceback (most recent call last):
+  File "/home/subhadip/Desktop/dvc-tf/src/stage2_prepare_base_model.py", line 67, in <module>
+    prepare_base_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "/home/subhadip/Desktop/dvc-tf/src/stage2_prepare_base_model.py", line 16, in prepare_base_model
+    params = read_yaml(params_path)
+  File "/home/subhadip/Desktop/dvc-tf/src/utils/all_utils.py", line 8, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+FileNotFoundError: [Errno 2] No such file or directory: './params.yaml'
+[2022-01-27 23:18:30,957: INFO: stage2_prepare_base_model]: >>>>> stage two started
+[2022-01-27 23:18:30,959: INFO: all_utils]: yaml file: ./config/config.yaml loaded successfully
+[2022-01-27 23:18:30,960: ERROR: stage2_prepare_base_model]: [Errno 2] No such file or directory: 'params.yaml'
+Traceback (most recent call last):
+  File "/home/subhadip/Desktop/dvc-tf/src/stage2_prepare_base_model.py", line 67, in <module>
+    prepare_base_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "/home/subhadip/Desktop/dvc-tf/src/stage2_prepare_base_model.py", line 16, in prepare_base_model
+    params = read_yaml(params_path)
+  File "/home/subhadip/Desktop/dvc-tf/src/utils/all_utils.py", line 8, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'params.yaml'
