@@ -28,8 +28,8 @@ stages:
       md5: 49adad7cde433bedde8401ebcdeb181e
       size: 425
     - path: params.yaml
-      md5: 3d98aa5b4460a644238f9657f65745ef
-      size: 118
+      md5: 89e72eb3b20a796f707cf9b792606a80
+      size: 119
     - path: src/stage2_prepare_base_model.py
       md5: 7b19b0291c021efc5e197df6c2b493a8
       size: 2229
@@ -45,13 +45,13 @@ stages:
         - 224
         - 224
         - 3
-        LEARNING_RATE: 0.01
+        LEARNING_RATE: 0.001
     outs:
     - path: artifacts/base_model/VGG16.h5
       md5: 6454385634b0618e7e8d116530348e21
       size: 58920816
     - path: artifacts/base_model/updated_VGG16.h5
-      md5: 23e1bb47f70ec060943f7958c0c052b3
+      md5: 9cb4e4cc1e23ead82279da9d6286960f
       size: 59133416
   prepare_callbacks:
     cmd: python src/stage3_prepare_callbacks.py --config=config/config.yaml --params=params.yaml
@@ -60,8 +60,8 @@ stages:
       md5: 49adad7cde433bedde8401ebcdeb181e
       size: 425
     - path: params.yaml
-      md5: 3d98aa5b4460a644238f9657f65745ef
-      size: 118
+      md5: 89e72eb3b20a796f707cf9b792606a80
+      size: 119
     - path: src/stage3_prepare_callbacks.py
       md5: 8831ea29d4af2845bab099b1946429b1
       size: 1826
@@ -76,19 +76,19 @@ stages:
       md5: f0f00ca19cb1372c05aabf3f7fd0a8a9
       size: 723
     - path: artifacts/callbacks/tensorboard_cb.cb
-      md5: 019af1d86db8346c1181466e78efed02
+      md5: 1ba7d49000e12be54a8e6bb89d686211
       size: 572
   train:
     cmd: python src/train.py --config=config/config.yaml --params=params.yaml
     deps:
     - path: artifacts/base_model/updated_VGG16.h5
-      md5: 23e1bb47f70ec060943f7958c0c052b3
+      md5: 9cb4e4cc1e23ead82279da9d6286960f
       size: 59133416
     - path: artifacts/callbacks/checkpoint_cb.cb
       md5: f0f00ca19cb1372c05aabf3f7fd0a8a9
       size: 723
     - path: artifacts/callbacks/tensorboard_cb.cb
-      md5: 019af1d86db8346c1181466e78efed02
+      md5: 1ba7d49000e12be54a8e6bb89d686211
       size: 572
     - path: config/config.yaml
       md5: 49adad7cde433bedde8401ebcdeb181e
@@ -118,7 +118,7 @@ stages:
     params:
       params.yaml:
         AUGMENTATION: true
-        BATCH_SIZE: 15
+        BATCH_SIZE: 20
         EPOCHS: 1
         IMAGE_SIZE:
         - 224
@@ -126,9 +126,9 @@ stages:
         - 3
     outs:
     - path: artifacts/evaluation/metrics.json
-      md5: 240ce9c59a384eb5bab32595f15a04a0
-      size: 261
+      md5: 6971ce4db453298bbc742ba77a4b26a0
+      size: 262
     - path: artifacts/model
-      md5: e0a00fbe52cf2cec4951cb113262e575.dir
-      size: 59135696
-      nfiles: 1
+      md5: 69cc06ecb9aaf92485ad780fb2ea66ec.dir
+      size: 118271392
+      nfiles: 2
