@@ -18,7 +18,7 @@ def prepare_callbacks(config_path, params_path):
     artifacts_dir = artifacts["ARTIFACTS_DIR"]
 
     tensorboard_log_dir = os.path.join(artifacts_dir, 
-    artifacts["TENSORBOARD_ROOT_LOG_DIR"])
+    artifacts["TENSORBOARD_LOG_DIR"])
 
     checkpoint_dir = os.path.join(artifacts_dir, artifacts["CHECKPOINT_DIR"])
     
@@ -38,7 +38,7 @@ if __name__ == '__main__':
     args = argparse.ArgumentParser()
 
     args.add_argument("--config", "-c", default="config/config.yaml")
-    args.add_argument("--params", "-p", default="params.yaml")
+    args.add_argument("--params", "-p", default="./params.yaml")
 
     parsed_args = args.parse_args()
 

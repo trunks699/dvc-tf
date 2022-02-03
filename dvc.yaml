@@ -1,0 +1,56 @@
+stages:
+  load_data:
+    cmd: python src/stage_01_load_save.py --config=config/config.yaml
+    deps: 
+      - src/stage_01_load_save.py
+      - src/utils/all_utils.py
+      - config/config.yaml
+      - ../data
+    outs:
+      - data
+  prepare_base_model:
+    cmd: python src/stage2_prepare_base_model.py --config=config/config.yaml --params=params.yaml
+    deps: 
+      - src/stage2_prepare_base_model.py
+      - src/utils/all_utils.py
+      - src/utils/models.py
+      - config/config.yaml
+      - params.yaml
+    params:
+      - IMAGE_SIZE
+      - LEARNING_RATE
+    outs:
+      - /home/subhadip/Desktop/dvc-tf/artifacts/base_model/updated_VGG16.h5
+      - /home/subhadip/Desktop/dvc-tf/artifacts/base_model/VGG16.h5
+
+  prepare_callbacks:
+    cmd: python src/stage3_prepare_callbacks.py --config=config/config.yaml --params=params.yaml
+    deps: 
+      - src/stage3_prepare_callbacks.py
+      - src/utils/all_utils.py
+      - src/utils/callbacks.py
+      - config/config.yaml
+      - params.yaml
+    outs:
+      - artifacts/callbacks/checkpoint_cb.cb
+      - artifacts/callbacks/tensorboard_cb.cb
+  train:
+    cmd: python src/train.py --config=config/config.yaml --params=params.yaml
+    deps: 
+      - src/train.py
+      - src/utils/all_utils.py
+      - src/utils/models.py
+      - src/utils/callbacks.py
+      - src/utils/data_management.py
+      - config/config.yaml
+      - data
+      - artifacts/base_model/updated_VGG16.h5
+      - artifacts/callbacks/checkpoint_cb.cb
+      - artifacts/callbacks/tensorboard_cb.cb
+    params:
+      - IMAGE_SIZE
+      - BATCH_SIZE
+      - EPOCHS
+      - AUGMENTATION
+    outs:
+      - artifacts/model/*

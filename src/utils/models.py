@@ -3,7 +3,7 @@ import os
 import logging
 from tensorflow.python.keras.backend import flatten
 from src.utils.all_utils import get_timestamp
-
+import glob
 def get_VGG_16_model(input_shape, model_path):
     model = tf.keras.applications.vgg16.VGG16(
         input_shape=input_shape,
@@ -20,7 +20,7 @@ def prepare_model(model, CLASSES, freeze_all, freeze_till, learning_rate):
         for layer in model.layers:
             layer.trainable = False
     elif (freeze_till is not None) and (freeze_till > 0):
-        for layer in model.layers[:-freeze_till]:
+        for layer in model.layers[-freeze_till:]:
             layer.trainable = False
 
     ## add our fully connected layers
@@ -46,14 +46,27 @@ def prepare_model(model, CLASSES, freeze_all, freeze_till, learning_rate):
     return full_model
 
 
-# def load_full_model(untrained_full_model_path):
-#     model = tf.keras.models.load_model(untrained_full_model_path)
-#     logging.info(f"untrained model is read from: {untrained_full_model_path}")
-#     return model
+def load_full_model(untrained_full_model_path):
+    model = tf.keras.models.load_model(untrained_full_model_path)
+    logging.info(f"untrained model is read from: {untrained_full_model_path}")
+    return model
 
-
-# def get_unique_path_to_save_model(trained_model_dir, model_name="model"):
-#     timestamp = get_timestamp(model_name)
-#     unique_model_name = f"{timestamp}_.h5"
-#     unique_model_path = os.path.join(trained_model_dir, unique_model_name)
-#     return unique_model_path
+def get_unique_path_to_save_model(trained_model_dir, model_name="model_v*"):
+    #timestamp = get_timestamp(model_name)
+    ver = 0
+    model_path=os.path.join(trained_model_dir,model_name)
+    models = glob.glob(model_path)
+    #print(models)
+    new_model_name=""
+    if(len(models)==0):
+        new_model_name = model_name[:-1]
+        new_model_name = new_model_name+(str(ver))
+    else:
+        last_model = models[-1]
+        last_version = last_model[-4]
+        new_version = int(last_version) + 1
+        new_model_name = model_name[:-1]
+        new_model_name = new_model_name+(str(new_version))
+    unique_model_name = f"{new_model_name}.h5"
+    unique_model_path = os.path.join(trained_model_dir, unique_model_name)
+    return unique_model_path

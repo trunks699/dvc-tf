@@ -8,10 +8,11 @@ artifacts:
   BASE_LOG_DIR: base_model_dir
   TENSORBOARD_LOG_DIR: tensorboard_log_dir
   CALLBACKS_DIR: callbacks
+  DATA_DIR: data
 
 source_data:
-  - ../data/cat
-  - ../data/dog
+      - ../data/cat
+      - ../data/dog
 
 local_data:
   - data/dog

@@ -20,7 +20,11 @@ def train_model(config_path, params_path):
     artifacts_dir = artifacts["ARTIFACTS_DIR"]
 
     train_model_dir_path = os.path.join(artifacts_dir, artifacts["TRAINED_MODEL_DIR"])
-
+    """
+    print(train_model_dir_path)
+    exists=os.path.isdir(train_model_dir_path)
+    print(exists)
+    """
     create_directory([train_model_dir_path])
 
     untrained_full_model_path = os.path.join(artifacts_dir, artifacts["BASE_MODEL_DIR"], artifacts["UPDATED_BASE_MODEL_NAME"])
@@ -40,6 +44,7 @@ def train_model(config_path, params_path):
     steps_per_epoch = train_generator.samples // train_generator.batch_size
     validation_steps = valid_generator.samples // valid_generator.batch_size
 
+   
     model.fit(
         train_generator,
         validation_data=valid_generator,
@@ -47,14 +52,16 @@ def train_model(config_path, params_path):
         steps_per_epoch=steps_per_epoch, 
         validation_steps=validation_steps,
         callbacks=callbacks
-    )
+    ) 
+
     logging.info(f"training completed")
 
     trained_model_dir = os.path.join(artifacts_dir, artifacts["TRAINED_MODEL_DIR"])
     create_directory([trained_model_dir])
-
+    print(trained_model_dir)
     model_file_path = get_unique_path_to_save_model(trained_model_dir)
-    model.save(model_file_path)
+    print(model_file_path)
+    model.save(model_file_path,overwrite=False)
     logging.info(f"trained model is saved at: {model_file_path}")
 
 

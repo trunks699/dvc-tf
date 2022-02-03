@@ -12,9 +12,12 @@ def read_yaml(path_to_yaml: str) -> dict:
 
 
 def create_directory(dirs: list):
+     
     for dir_path in dirs:
-        os.makedirs(dir_path, exist_ok=True)
-        logging.info(f"directory is created at {dir_path}")
+        exists=os.path.isdir(dir_path)
+        if not exists:
+            os.makedirs(dir_path, exist_ok=True)
+            logging.info(f"directory is created at {dir_path}")
 
 
 def save_local_df(data, data_path, index_status=False):
