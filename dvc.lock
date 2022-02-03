@@ -4,9 +4,9 @@ stages:
     cmd: python src/stage_01_load_save.py --config=config/config.yaml
     deps:
     - path: ../data
-      md5: 1e3e4eeb086cdb98ed226d860cab3c96.dir
-      size: 39212190
-      nfiles: 282
+      md5: b4a99a312acdf8bbde83ccccc50c5c4c.dir
+      size: 39343706
+      nfiles: 284
     - path: config/config.yaml
       md5: 49adad7cde433bedde8401ebcdeb181e
       size: 425
@@ -18,9 +18,9 @@ stages:
       size: 1027
     outs:
     - path: data
-      md5: 91f7f6c8339e4b9146eac8f4ef85b7bd.dir
-      size: 39212190
-      nfiles: 282
+      md5: 968c66c00e2d09d34b15583ccc11d122.dir
+      size: 39343706
+      nfiles: 284
   prepare_base_model:
     cmd: python src/stage2_prepare_base_model.py --config=config/config.yaml --params=params.yaml
     deps:
@@ -94,9 +94,9 @@ stages:
       md5: 49adad7cde433bedde8401ebcdeb181e
       size: 425
     - path: data
-      md5: 91f7f6c8339e4b9146eac8f4ef85b7bd.dir
-      size: 39212190
-      nfiles: 282
+      md5: 968c66c00e2d09d34b15583ccc11d122.dir
+      size: 39343706
+      nfiles: 284
     - path: src/train.py
       md5: 0d31975a9c777c62d74a71b6997f8978
       size: 3363
@@ -126,9 +126,9 @@ stages:
         - 3
     outs:
     - path: artifacts/evaluation/metrics.json
-      md5: 6971ce4db453298bbc742ba77a4b26a0
-      size: 262
+      md5: 40739f291e5ccd76eaf751129223bc8d
+      size: 248
     - path: artifacts/model
-      md5: 69cc06ecb9aaf92485ad780fb2ea66ec.dir
-      size: 118271392
-      nfiles: 2
+      md5: b980f155ea11280dafbe7f3a3f5fbeb2.dir
+      size: 177407088
+      nfiles: 3
