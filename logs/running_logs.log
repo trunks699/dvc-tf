@@ -3926,3 +3926,17 @@ _________________________________________________________________
 [2022-02-03 23:09:58,588: INFO: train]: stage four completed! training completed and model is saved >>>>>
 
 
+[2022-02-03 23:11:12,305: INFO: train]: >>>>> stage four started
+[2022-02-03 23:11:12,306: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-03 23:11:12,307: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-03 23:11:12,541: INFO: models]: untrained model is read from: artifacts/base_model/updated_VGG16.h5
+[2022-02-03 23:11:12,542: INFO: callbacks]: saved callbacks are loaded from artifacts/callbacks
+[2022-02-03 23:11:12,546: INFO: data_management]: data augmentation is used for training
+[2022-02-03 23:11:12,551: INFO: data_management]: train and valid generator is created.
+[2022-02-03 23:11:32,786: INFO: train]: training completed
+[2022-02-03 23:11:32,788: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-03 23:11:32,788: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-03 23:11:50,026: INFO: train]: trained model is saved at: artifacts/model/model_v10.h5
+[2022-02-03 23:11:50,027: INFO: train]: stage four completed! training completed and model is saved >>>>>
+
+
