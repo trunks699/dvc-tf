@@ -20,7 +20,7 @@ def record_evaluation(model_path,config_path, params_path,history,train_samples,
     model_name = model_path[model_name_index:]
     config = read_yaml(config_path)
     params = read_yaml(params_path)
-
+    final_epoch = (params["EPOCHS"]-1)
     metrics = {
     "Model_Name": model_name,
     "train_set_samples": train_samples,
@@ -28,10 +28,10 @@ def record_evaluation(model_path,config_path, params_path,history,train_samples,
     "Epochs":params["EPOCHS"],
     "Learning_Rate":params["LEARNING_RATE"],
     "Batch_size":params["BATCH_SIZE"],
-    "accuracy":history.history["accuracy"],
-    "loss":history.history["loss"],
-    "val_accuracy":history.history["val_accuracy"],
-    "val_loss":history.history["val_loss"],
+    "accuracy":history.history["accuracy"][final_epoch],
+    "loss":history.history["loss"][final_epoch],
+    "val_accuracy":history.history["val_accuracy"][final_epoch],
+    "val_loss":history.history["val_loss"][final_epoch],
     }
     artifacts = config["artifacts"]
     artifacts_dir = artifacts["ARTIFACTS_DIR"]
