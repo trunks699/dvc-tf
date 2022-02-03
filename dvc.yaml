@@ -20,8 +20,8 @@ stages:
       - IMAGE_SIZE
       - LEARNING_RATE
     outs:
-      - /home/subhadip/Desktop/dvc-tf/artifacts/base_model/updated_VGG16.h5
-      - /home/subhadip/Desktop/dvc-tf/artifacts/base_model/VGG16.h5
+      - artifacts/base_model/updated_VGG16.h5
+      - artifacts/base_model/VGG16.h5
 
   prepare_callbacks:
     cmd: python src/stage3_prepare_callbacks.py --config=config/config.yaml --params=params.yaml
@@ -47,10 +47,18 @@ stages:
       - artifacts/base_model/updated_VGG16.h5
       - artifacts/callbacks/checkpoint_cb.cb
       - artifacts/callbacks/tensorboard_cb.cb
+      - src/utils/evaluate.py
     params:
       - IMAGE_SIZE
       - BATCH_SIZE
       - EPOCHS
       - AUGMENTATION
     outs:
-      - artifacts/model/*
+      - artifacts/model:
+          persist: true
+    metrics:
+      - artifacts/evaluation/metrics.json:
+          cache: false
+    
+
+    

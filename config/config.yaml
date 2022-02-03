@@ -5,10 +5,11 @@ artifacts:
   BASE_MODEL_NAME: VGG16.h5
   UPDATED_BASE_MODEL_NAME: updated_VGG16.h5
   CHECKPOINT_DIR: checkpoints
-  BASE_LOG_DIR: base_model_dir
+  BASE_LOG_DIR: logs
   TENSORBOARD_LOG_DIR: tensorboard_log_dir
   CALLBACKS_DIR: callbacks
   DATA_DIR: data
+  EVALUATION_DIR: evaluation
 
 source_data:
       - ../data/cat

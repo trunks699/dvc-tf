@@ -3,6 +3,7 @@ from src.utils.callbacks import create_and_save_tensorboard_callback, create_and
 import argparse
 import os
 import logging
+import time 
 
 logging_str = "[%(asctime)s: %(levelname)s: %(module)s]: %(message)s"
 log_dir = "logs"
@@ -32,7 +33,9 @@ def prepare_callbacks(config_path, params_path):
 
     create_and_save_tensorboard_callback(callbacks_dir, tensorboard_log_dir)
     create_and_save_checkpoint_callback(callbacks_dir, checkpoint_dir)
-
+    
+    #print("\n\nwaiting.......\n\n")
+    #time.sleep(10)
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
@@ -49,3 +52,4 @@ if __name__ == '__main__':
     except Exception as e:
         logging.exception(e)
         raise e
+  

@@ -16,7 +16,7 @@ def create_directory(dirs: list):
     for dir_path in dirs:
         exists=os.path.isdir(dir_path)
         if not exists:
-            os.makedirs(dir_path, exist_ok=True)
+            os.makedirs(dir_path)
             logging.info(f"directory is created at {dir_path}")
 
 

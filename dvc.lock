@@ -4,41 +4,41 @@ stages:
     cmd: python src/stage_01_load_save.py --config=config/config.yaml
     deps:
     - path: ../data
-      md5: 5d5465e2edcc99744bde5ec6eb8cf21d.dir
-      size: 37998285
-      nfiles: 279
+      md5: 1e3e4eeb086cdb98ed226d860cab3c96.dir
+      size: 39212190
+      nfiles: 282
     - path: config/config.yaml
-      md5: a20b959fd0cc74e8d15a2547eb0f3104
-      size: 406
+      md5: 49adad7cde433bedde8401ebcdeb181e
+      size: 425
     - path: src/stage_01_load_save.py
       md5: 773df5e08e8e97e51912371e29ad14d0
       size: 1669
     - path: src/utils/all_utils.py
-      md5: 89debc3e8aa8a4e5743ff8dcac50082d
-      size: 1042
+      md5: 267700b0b4150b65a4f696cc5beb4e94
+      size: 1027
     outs:
     - path: data
-      md5: 89ec0a2d2ad9f20565ab38982a1414d7.dir
-      size: 37998285
-      nfiles: 279
+      md5: 91f7f6c8339e4b9146eac8f4ef85b7bd.dir
+      size: 39212190
+      nfiles: 282
   prepare_base_model:
     cmd: python src/stage2_prepare_base_model.py --config=config/config.yaml --params=params.yaml
     deps:
     - path: config/config.yaml
-      md5: a20b959fd0cc74e8d15a2547eb0f3104
-      size: 406
+      md5: 49adad7cde433bedde8401ebcdeb181e
+      size: 425
     - path: params.yaml
-      md5: 976775191aa9c1d25320516def934926
+      md5: 3d98aa5b4460a644238f9657f65745ef
       size: 118
     - path: src/stage2_prepare_base_model.py
       md5: 7b19b0291c021efc5e197df6c2b493a8
       size: 2229
     - path: src/utils/all_utils.py
-      md5: 89debc3e8aa8a4e5743ff8dcac50082d
-      size: 1042
+      md5: 267700b0b4150b65a4f696cc5beb4e94
+      size: 1027
     - path: src/utils/models.py
-      md5: d833723f0bab09803bd3a046799a7fa6
-      size: 2354
+      md5: b25ce69f4ce567cd31e2e3d515a835b0
+      size: 2392
     params:
       params.yaml:
         IMAGE_SIZE:
@@ -51,23 +51,23 @@ stages:
       md5: 6454385634b0618e7e8d116530348e21
       size: 58920816
     - path: artifacts/base_model/updated_VGG16.h5
-      md5: 4ce9fe8406c993c7c3bf32b5c31dce45
+      md5: 006c86ef0c76b6ee56b99a6a0df9123e
       size: 59133416
   prepare_callbacks:
     cmd: python src/stage3_prepare_callbacks.py --config=config/config.yaml --params=params.yaml
     deps:
     - path: config/config.yaml
-      md5: a20b959fd0cc74e8d15a2547eb0f3104
-      size: 406
+      md5: 49adad7cde433bedde8401ebcdeb181e
+      size: 425
     - path: params.yaml
-      md5: 976775191aa9c1d25320516def934926
+      md5: 3d98aa5b4460a644238f9657f65745ef
       size: 118
     - path: src/stage3_prepare_callbacks.py
-      md5: 6f98c6bbf3ad4d1e836c512c76c8e0ac
-      size: 1749
+      md5: 8831ea29d4af2845bab099b1946429b1
+      size: 1826
     - path: src/utils/all_utils.py
-      md5: 89debc3e8aa8a4e5743ff8dcac50082d
-      size: 1042
+      md5: 267700b0b4150b65a4f696cc5beb4e94
+      size: 1027
     - path: src/utils/callbacks.py
       md5: 47f9289a47896bc1e89dfce6edcee9d6
       size: 1487
@@ -76,53 +76,59 @@ stages:
       md5: f0f00ca19cb1372c05aabf3f7fd0a8a9
       size: 723
     - path: artifacts/callbacks/tensorboard_cb.cb
-      md5: 376d8acb3439511103d8b3ea7b74323d
+      md5: 019af1d86db8346c1181466e78efed02
       size: 572
   train:
     cmd: python src/train.py --config=config/config.yaml --params=params.yaml
     deps:
     - path: artifacts/base_model/updated_VGG16.h5
-      md5: 4ce9fe8406c993c7c3bf32b5c31dce45
+      md5: 006c86ef0c76b6ee56b99a6a0df9123e
       size: 59133416
     - path: artifacts/callbacks/checkpoint_cb.cb
       md5: f0f00ca19cb1372c05aabf3f7fd0a8a9
       size: 723
     - path: artifacts/callbacks/tensorboard_cb.cb
-      md5: 376d8acb3439511103d8b3ea7b74323d
+      md5: 019af1d86db8346c1181466e78efed02
       size: 572
     - path: config/config.yaml
-      md5: a20b959fd0cc74e8d15a2547eb0f3104
-      size: 406
+      md5: 49adad7cde433bedde8401ebcdeb181e
+      size: 425
     - path: data
-      md5: 89ec0a2d2ad9f20565ab38982a1414d7.dir
-      size: 37998285
-      nfiles: 279
+      md5: 91f7f6c8339e4b9146eac8f4ef85b7bd.dir
+      size: 39212190
+      nfiles: 282
     - path: src/train.py
-      md5: 89085c38e73fcfa414a5f20fc15db7d3
-      size: 2917
+      md5: 0d31975a9c777c62d74a71b6997f8978
+      size: 3363
     - path: src/utils/all_utils.py
-      md5: 89debc3e8aa8a4e5743ff8dcac50082d
-      size: 1042
+      md5: 267700b0b4150b65a4f696cc5beb4e94
+      size: 1027
     - path: src/utils/callbacks.py
       md5: 47f9289a47896bc1e89dfce6edcee9d6
       size: 1487
     - path: src/utils/data_management.py
       md5: de2dc7f006b645cfdcd30e58689f4926
       size: 1399
+    - path: src/utils/evaluate.py
+      md5: be833f9589028e6af9ccadeae4d1605a
+      size: 1587
     - path: src/utils/models.py
-      md5: d833723f0bab09803bd3a046799a7fa6
-      size: 2354
+      md5: b25ce69f4ce567cd31e2e3d515a835b0
+      size: 2392
     params:
       params.yaml:
         AUGMENTATION: true
-        BATCH_SIZE: 20
+        BATCH_SIZE: 15
         EPOCHS: 1
         IMAGE_SIZE:
         - 224
         - 224
         - 3
     outs:
+    - path: artifacts/evaluation/metrics.json
+      md5: 9fa8a8daefa7ba4e596ea344697261d1
+      size: 270
     - path: artifacts/model
-      md5: 039f7c56c9eabffe7278ad2209a30432.dir
-      size: 59135696
-      nfiles: 1
+      md5: 490caa124f4673f72fa292b259d8efd9.dir
+      size: 295678480
+      nfiles: 5

@@ -56,17 +56,20 @@ def get_unique_path_to_save_model(trained_model_dir, model_name="model_v*"):
     ver = 0
     model_path=os.path.join(trained_model_dir,model_name)
     models = glob.glob(model_path)
-    #print(models)
+    
+    models.sort(reverse=True)
+    print(models)
     new_model_name=""
     if(len(models)==0):
         new_model_name = model_name[:-1]
         new_model_name = new_model_name+(str(ver))
     else:
-        last_model = models[-1]
+        last_model = models[0]
         last_version = last_model[-4]
         new_version = int(last_version) + 1
         new_model_name = model_name[:-1]
         new_model_name = new_model_name+(str(new_version))
     unique_model_name = f"{new_model_name}.h5"
     unique_model_path = os.path.join(trained_model_dir, unique_model_name)
+    
     return unique_model_path
