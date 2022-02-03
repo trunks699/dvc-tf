@@ -57,15 +57,21 @@ def get_unique_path_to_save_model(trained_model_dir, model_name="model_v*"):
     model_path=os.path.join(trained_model_dir,model_name)
     models = glob.glob(model_path)
     
-    models.sort(reverse=True)
-    print(models)
+    
+    versions=[]
+    
     new_model_name=""
     if(len(models)==0):
         new_model_name = model_name[:-1]
         new_model_name = new_model_name+(str(ver))
     else:
-        last_model = models[0]
-        last_version = last_model[-4]
+        for model in models:
+            substr = model.split('_')
+            substr=substr[1].split('.')
+            s = substr[0]
+            version = int(s[1:])
+            versions.append(version)
+        last_version = max(versions)
         new_version = int(last_version) + 1
         new_model_name = model_name[:-1]
         new_model_name = new_model_name+(str(new_version))
