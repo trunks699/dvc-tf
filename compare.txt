@@ -1,5 +1,6 @@
 Revision                                  Path                               Batch_size    Epochs    Learning_Rate    accuracy    loss      test_set_samples    train_set_samples    val_accuracy    val_loss
-workspace                                 artifacts/evaluation/metrics.json  16            1         0.0001           0.53521     0.72071   57                  229                  0.39583         0.79533
+workspace                                 artifacts/evaluation/metrics.json  20            1         0.001            0.56938     1.06231   57                  229                  0.125           1.97281
+5b236f4de72f0b01ddf9c119bc6068baa9381185  artifacts/evaluation/metrics.json  16            1         0.0001           0.53521     0.72071   57                  229                  0.39583         0.79533
 105739973831fddf3e86b4cf795ecff5e6677558  artifacts/evaluation/metrics.json  16            1         0.0001           0.49765     0.7602    56                  229                  0.5             0.7292
 56544a8bb014f4cfe2d1a0fd3cf86b9d0d8ae371  artifacts/evaluation/metrics.json  16            1         0.0001           0.51185     0.75331   56                  227                  0.4375          0.75171
 0512506af71af476094ecddd27e896ce70452cac  artifacts/evaluation/metrics.json  20            1         0.001            0.54589     1.14324   56                  227                  0.875           0.66076
