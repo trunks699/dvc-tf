@@ -126,9 +126,9 @@ stages:
         - 3
     outs:
     - path: artifacts/evaluation/metrics.json
-      md5: 40739f291e5ccd76eaf751129223bc8d
-      size: 248
+      md5: d23dca68a2facfae553273e9efcf889f
+      size: 249
     - path: artifacts/model
-      md5: b980f155ea11280dafbe7f3a3f5fbeb2.dir
-      size: 177407088
-      nfiles: 3
+      md5: 80e5cc834867985d6a104b923a524211.dir
+      size: 59135696
+      nfiles: 1
