@@ -4282,3 +4282,23 @@ _________________________________________________________________
 [2022-02-04 09:49:08,274: INFO: train]: stage four completed! training completed and model is saved >>>>>
 
 
+[2022-02-04 09:50:45,764: INFO: stage_01_load_save]: >>>>> stage one started
+[2022-02-04 09:50:45,765: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-04 09:50:45,769: INFO: all_utils]: directory is created at data/dog
+[2022-02-04 09:50:45,784: INFO: all_utils]: directory is created at data/cat
+[2022-02-04 09:50:45,802: INFO: stage_01_load_save]: stage one completed! all the data are saved in local >>>>>
+
+[2022-02-04 09:50:48,274: INFO: train]: >>>>> stage four started
+[2022-02-04 09:50:48,276: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-04 09:50:48,277: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-04 09:50:48,521: INFO: models]: untrained model is read from: artifacts/base_model/updated_VGG16.h5
+[2022-02-04 09:50:48,522: INFO: callbacks]: saved callbacks are loaded from artifacts/callbacks
+[2022-02-04 09:50:48,526: INFO: data_management]: data augmentation is used for training
+[2022-02-04 09:50:48,531: INFO: data_management]: train and valid generator is created.
+[2022-02-04 09:51:13,906: INFO: train]: training completed
+[2022-02-04 09:51:13,908: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-04 09:51:13,909: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-04 09:51:13,969: INFO: train]: trained model is saved at: artifacts/model/model_v4.h5
+[2022-02-04 09:51:13,970: INFO: train]: stage four completed! training completed and model is saved >>>>>
+
+

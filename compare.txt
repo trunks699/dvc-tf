@@ -1,0 +1,14 @@
+Revision                                  Path                               Batch_size    Epochs    Learning_Rate    accuracy    loss      test_set_samples    train_set_samples    val_accuracy    val_loss
+workspace                                 artifacts/evaluation/metrics.json  16            1         0.0001           0.53521     0.72071   57                  229                  0.39583         0.79533
+105739973831fddf3e86b4cf795ecff5e6677558  artifacts/evaluation/metrics.json  16            1         0.0001           0.49765     0.7602    56                  229                  0.5             0.7292
+56544a8bb014f4cfe2d1a0fd3cf86b9d0d8ae371  artifacts/evaluation/metrics.json  16            1         0.0001           0.51185     0.75331   56                  227                  0.4375          0.75171
+0512506af71af476094ecddd27e896ce70452cac  artifacts/evaluation/metrics.json  20            1         0.001            0.54589     1.14324   56                  227                  0.875           0.66076
+e8c3aff877a55213ae355df9bdf78de1b5be165a  artifacts/evaluation/metrics.json  20            1         0.001            0.57005     0.9348    56                  227                  0.125           5.45502
+04b7dbe269b6b6625702aa61cffcf7d9ba912bde  artifacts/evaluation/metrics.json  20            1         0.001            0.51456     1.20098   55                  226                  0.15            2.25231
+2bd640e07bf5089532ce1fce8f9b02436ff552cc  artifacts/evaluation/metrics.json  15            1         0.01             0.5545      17.32176  55                  226                  0.24444         7.046
+068be37526593ef0fe1680612e4ee08469ce9846  artifacts/evaluation/metrics.json  20            1         0.001            0.53883     1.31845   55                  226                  0.175           1.32694
+9d06ab863172f70589f4d912961291fdad40abc2  artifacts/evaluation/metrics.json  12            1         0.0001           0.57944     0.68739   55                  226                  0.72917         0.56001
+7106b575eca257aa002e6dcdb4b454dd71a600e3  artifacts/evaluation/metrics.json  12            1         0.1              0.44393     226.5854  55                  226                  0.29167         218.73682
+ab25c9720c08d8a809e8cf6fc93fe93bba2c2580  artifacts/evaluation/metrics.json  15            1         0.01             0.54976     13.97519  55                  226                  0.75556         0.4808
+8a114c39e4b62d3b4f39866a51ea14ac30edfebf  artifacts/evaluation/metrics.json  20            1         0.001            0.52427     1.63494   55                  226                  0.85            0.44949
+6ffabc1b34fdc650aece0fe7a3a8eb890b360d23  artifacts/evaluation/metrics.json  15            1         0.01             -           -         55                  226                  -               -
