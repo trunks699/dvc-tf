@@ -77,7 +77,7 @@ def train_model(config_path, params_path):
     train_samples = train_generator.samples
     test_samples = valid_generator.samples
     #save_history(model_file_path,history,train_samples,test_samples)
-    record_evaluation(model_file_path,config_path,params_path,history,train_samples,test_samples)
+    record_evaluation(model,model_file_path,config_path,params_path,history,train_samples,test_samples)
     model.save(model_file_path,overwrite=False)
 
     logging.info(f"trained model is saved at: {model_file_path}")

@@ -18,3 +18,11 @@ source_data:
 local_data:
   - data/dog
   - data/cat
+
+mlflow_config:
+  ARTIFACTS_DIR: artifacts
+  EXPERIMENT_NAME: Cats_and_Dogs
+  RUN_NAME: experimentation2
+  REMOTE_SERVER_URI: http://0.0.0.0:1234
+
+  

@@ -7,6 +7,8 @@ import os
 import logging
 import time
 import json
+import mlflow
+from urllib.parse import urlparse
 
 logging_str = "[%(asctime)s: %(levelname)s: %(module)s]: %(message)s"
 log_dir = "logs"
@@ -15,12 +17,33 @@ logging.basicConfig(filename=os.path.join(log_dir, 'running_logs.log'), level=lo
                     filemode="a")
 
 print("to_retrain")
-def record_evaluation(model_path,config_path, params_path,history,train_samples,test_samples):
+def record_evaluation(model,model_path,config_path, params_path,history,train_samples,test_samples):
     model_name_index = model_path.find("model_")
     model_name = model_path[model_name_index:]
     config = read_yaml(config_path)
     params = read_yaml(params_path)
     final_epoch = (params["EPOCHS"]-1)
+    mlflow_config = config["mlflow_config"]
+    mlflow_server_uri = mlflow_config["REMOTE_SERVER_URI"]
+    mlflow.set_tracking_uri(mlflow_server_uri)
+    mlflow.set_experiment(mlflow_config["EXPERIMENT_NAME"])
+
+    with mlflow.start_run(run_name=mlflow_config["RUN_NAME"]) as run:
+        mlflow.log_param(key="train_samples",value=train_samples)
+        mlflow.log_param(key="test_samples",value=test_samples)
+        mlflow.log_param(key="EPOCHS",value=params["EPOCHS"])
+        mlflow.log_param(key="Batch_size",value=params["BATCH_SIZE"])
+        for i in range(1,params["EPOCHS"]+1): 
+            mlflow.log_metric(key="accuracy",value=history.history["accuracy"][i-1],step=i)
+            mlflow.log_metric(key="loss",value=history.history["loss"][i-1],step=i)
+            mlflow.log_metric(key="val_accuracy",value=history.history["val_accuracy"][i-1],step=i)
+            mlflow.log_metric(key="val_loss",value=history.history["val_loss"][i-1],step=i)
+        mlflow.keras.log_model(
+                model,
+                model_name,
+                registered_model_name=model_name,        
+            )
+
     metrics = {
     "Model_Name": model_name,
     "train_set_samples": train_samples,
