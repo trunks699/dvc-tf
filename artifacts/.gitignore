@@ -3,4 +3,4 @@ VGG16.h5
 model/
 base_model/
 /model
-checkpoints/
+checkpoints
