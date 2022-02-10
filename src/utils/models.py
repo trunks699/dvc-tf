@@ -53,7 +53,7 @@ def load_full_model(untrained_full_model_path):
 
 def get_unique_path_to_save_model(trained_model_dir, model_name="model_v*"):
     #timestamp = get_timestamp(model_name)
-    ver = 0
+    ver = 1
     model_path=os.path.join(trained_model_dir,model_name)
     models = glob.glob(model_path)
     

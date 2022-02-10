@@ -5429,3 +5429,383 @@ _________________________________________________________________
 [2022-02-10 01:29:12,600: INFO: stage_04_train]: stage four completed! training completed and model is saved >>>>>
 
 
+[2022-02-10 01:36:55,341: INFO: stage_03_prepare_callbacks]: >>>>> stage three started
+[2022-02-10 01:36:55,342: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:36:55,343: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:36:55,343: INFO: callbacks]: tensorboard callback is being saved at artifacts/callbacks/tensorboard_cb.cb
+[2022-02-10 01:36:55,344: INFO: callbacks]: tensorboard callback is being saved at artifacts/callbacks/checkpoint_cb.cb
+[2022-02-10 01:36:55,344: INFO: stage_03_prepare_callbacks]: stage three completed! callbacks are prepared and saved as binary>>>>>
+
+[2022-02-10 01:36:56,140: INFO: stage_01_load_save]: >>>>> stage one started
+[2022-02-10 01:36:56,141: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:36:56,145: INFO: all_utils]: directory is created at data/dog
+[2022-02-10 01:36:56,204: INFO: all_utils]: directory is created at data/cat
+[2022-02-10 01:36:56,256: INFO: stage_01_load_save]: stage one completed! all the data are saved in local >>>>>
+
+[2022-02-10 01:36:58,585: INFO: stage_02_prepare_base_model]: >>>>> stage two started
+[2022-02-10 01:36:58,586: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:36:58,587: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:36:58,848: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2022-02-10 01:36:58,900: INFO: models]: VGG16 base model saved at: artifacts/base_model/VGG16.h5
+[2022-02-10 01:36:58,911: INFO: models]: custom model is compiled and ready to be trained
+[2022-02-10 01:36:58,914: INFO: stage_02_prepare_base_model]: full model summary: 
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 224, 224, 3)]     0         
+                                                                 
+ block1_conv1 (Conv2D)       (None, 224, 224, 64)      1792      
+                                                                 
+ block1_conv2 (Conv2D)       (None, 224, 224, 64)      36928     
+                                                                 
+ block1_pool (MaxPooling2D)  (None, 112, 112, 64)      0         
+                                                                 
+ block2_conv1 (Conv2D)       (None, 112, 112, 128)     73856     
+                                                                 
+ block2_conv2 (Conv2D)       (None, 112, 112, 128)     147584    
+                                                                 
+ block2_pool (MaxPooling2D)  (None, 56, 56, 128)       0         
+                                                                 
+ block3_conv1 (Conv2D)       (None, 56, 56, 256)       295168    
+                                                                 
+ block3_conv2 (Conv2D)       (None, 56, 56, 256)       590080    
+                                                                 
+ block3_conv3 (Conv2D)       (None, 56, 56, 256)       590080    
+                                                                 
+ block3_pool (MaxPooling2D)  (None, 28, 28, 256)       0         
+                                                                 
+ block4_conv1 (Conv2D)       (None, 28, 28, 512)       1180160   
+                                                                 
+ block4_conv2 (Conv2D)       (None, 28, 28, 512)       2359808   
+                                                                 
+ block4_conv3 (Conv2D)       (None, 28, 28, 512)       2359808   
+                                                                 
+ block4_pool (MaxPooling2D)  (None, 14, 14, 512)       0         
+                                                                 
+ block5_conv1 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_conv2 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_conv3 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_pool (MaxPooling2D)  (None, 7, 7, 512)         0         
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 2)                 50178     
+                                                                 
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-02-10 01:36:58,970: INFO: stage_02_prepare_base_model]: stage two completed! base model is created >>>>>
+
+[2022-02-10 01:37:00,970: INFO: stage_04_train]: >>>>> stage four started
+[2022-02-10 01:37:00,972: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:37:00,973: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:37:01,153: INFO: models]: untrained model is read from: artifacts/base_model/updated_VGG16.h5
+[2022-02-10 01:37:01,153: INFO: callbacks]: saved callbacks are loaded from artifacts/callbacks
+[2022-02-10 01:37:01,158: INFO: data_management]: data augmentation is used for training
+[2022-02-10 01:37:01,163: INFO: data_management]: train and valid generator is created.
+[2022-02-10 01:37:39,579: INFO: stage_04_train]: training completed
+[2022-02-10 01:37:39,581: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:37:39,581: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:37:41,192: INFO: builder_impl]: Assets written to: /tmp/tmpfgkhwniv/model/data/model/assets
+[2022-02-10 01:37:43,843: INFO: stage_04_train]: trained model is saved at: artifacts/model/model_v1.h5
+[2022-02-10 01:37:43,843: INFO: stage_04_train]: stage four completed! training completed and model is saved >>>>>
+
+
+[2022-02-10 01:38:00,963: INFO: stage_02_prepare_base_model]: >>>>> stage two started
+[2022-02-10 01:38:00,965: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:38:00,966: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:38:01,211: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2022-02-10 01:38:01,262: INFO: models]: VGG16 base model saved at: artifacts/base_model/VGG16.h5
+[2022-02-10 01:38:01,272: INFO: models]: custom model is compiled and ready to be trained
+[2022-02-10 01:38:01,274: INFO: stage_02_prepare_base_model]: full model summary: 
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 224, 224, 3)]     0         
+                                                                 
+ block1_conv1 (Conv2D)       (None, 224, 224, 64)      1792      
+                                                                 
+ block1_conv2 (Conv2D)       (None, 224, 224, 64)      36928     
+                                                                 
+ block1_pool (MaxPooling2D)  (None, 112, 112, 64)      0         
+                                                                 
+ block2_conv1 (Conv2D)       (None, 112, 112, 128)     73856     
+                                                                 
+ block2_conv2 (Conv2D)       (None, 112, 112, 128)     147584    
+                                                                 
+ block2_pool (MaxPooling2D)  (None, 56, 56, 128)       0         
+                                                                 
+ block3_conv1 (Conv2D)       (None, 56, 56, 256)       295168    
+                                                                 
+ block3_conv2 (Conv2D)       (None, 56, 56, 256)       590080    
+                                                                 
+ block3_conv3 (Conv2D)       (None, 56, 56, 256)       590080    
+                                                                 
+ block3_pool (MaxPooling2D)  (None, 28, 28, 256)       0         
+                                                                 
+ block4_conv1 (Conv2D)       (None, 28, 28, 512)       1180160   
+                                                                 
+ block4_conv2 (Conv2D)       (None, 28, 28, 512)       2359808   
+                                                                 
+ block4_conv3 (Conv2D)       (None, 28, 28, 512)       2359808   
+                                                                 
+ block4_pool (MaxPooling2D)  (None, 14, 14, 512)       0         
+                                                                 
+ block5_conv1 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_conv2 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_conv3 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_pool (MaxPooling2D)  (None, 7, 7, 512)         0         
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 2)                 50178     
+                                                                 
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-02-10 01:38:01,327: INFO: stage_02_prepare_base_model]: stage two completed! base model is created >>>>>
+
+[2022-02-10 01:38:03,079: INFO: stage_03_prepare_callbacks]: >>>>> stage three started
+[2022-02-10 01:38:03,080: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:38:03,081: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:38:03,081: INFO: callbacks]: tensorboard callback is being saved at artifacts/callbacks/tensorboard_cb.cb
+[2022-02-10 01:38:03,082: INFO: callbacks]: tensorboard callback is being saved at artifacts/callbacks/checkpoint_cb.cb
+[2022-02-10 01:38:03,082: INFO: stage_03_prepare_callbacks]: stage three completed! callbacks are prepared and saved as binary>>>>>
+
+[2022-02-10 01:38:04,782: INFO: stage_04_train]: >>>>> stage four started
+[2022-02-10 01:38:04,783: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:38:04,784: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:38:04,981: INFO: models]: untrained model is read from: artifacts/base_model/updated_VGG16.h5
+[2022-02-10 01:38:04,982: INFO: callbacks]: saved callbacks are loaded from artifacts/callbacks
+[2022-02-10 01:38:04,986: INFO: data_management]: data augmentation is used for training
+[2022-02-10 01:38:04,990: INFO: data_management]: train and valid generator is created.
+[2022-02-10 01:38:47,115: INFO: stage_04_train]: training completed
+[2022-02-10 01:38:47,117: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:38:47,117: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:38:48,421: INFO: builder_impl]: Assets written to: /tmp/tmpw7o46b8s/model/data/model/assets
+[2022-02-10 01:38:51,004: INFO: stage_04_train]: trained model is saved at: artifacts/model/model_v2.h5
+[2022-02-10 01:38:51,005: INFO: stage_04_train]: stage four completed! training completed and model is saved >>>>>
+
+
+[2022-02-10 01:42:03,240: INFO: stage_04_train]: >>>>> stage four started
+[2022-02-10 01:42:03,242: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:42:03,243: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:42:03,417: INFO: models]: untrained model is read from: artifacts/base_model/updated_VGG16.h5
+[2022-02-10 01:42:03,417: INFO: callbacks]: saved callbacks are loaded from artifacts/callbacks
+[2022-02-10 01:42:03,422: INFO: data_management]: data augmentation is used for training
+[2022-02-10 01:42:03,426: INFO: data_management]: train and valid generator is created.
+[2022-02-10 01:42:41,988: INFO: stage_04_train]: training completed
+[2022-02-10 01:42:41,990: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:42:41,991: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:42:43,516: INFO: builder_impl]: Assets written to: /tmp/tmp1np4bi3m/model/data/model/assets
+[2022-02-10 01:42:46,089: INFO: stage_04_train]: trained model is saved at: artifacts/model/model_v1.h5
+[2022-02-10 01:42:46,090: INFO: stage_04_train]: stage four completed! training completed and model is saved >>>>>
+
+
+[2022-02-10 01:42:57,503: INFO: stage_04_train]: >>>>> stage four started
+[2022-02-10 01:42:57,505: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:42:57,505: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:42:57,686: INFO: models]: untrained model is read from: artifacts/base_model/updated_VGG16.h5
+[2022-02-10 01:42:57,686: INFO: callbacks]: saved callbacks are loaded from artifacts/callbacks
+[2022-02-10 01:42:57,690: INFO: data_management]: data augmentation is used for training
+[2022-02-10 01:42:57,695: INFO: data_management]: train and valid generator is created.
+[2022-02-10 01:43:40,784: INFO: stage_04_train]: training completed
+[2022-02-10 01:43:40,786: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:43:40,787: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:43:42,082: INFO: builder_impl]: Assets written to: /tmp/tmp69c9ntx5/model/data/model/assets
+[2022-02-10 01:43:44,625: INFO: stage_04_train]: trained model is saved at: artifacts/model/model_v2.h5
+[2022-02-10 01:43:44,626: INFO: stage_04_train]: stage four completed! training completed and model is saved >>>>>
+
+
+[2022-02-10 01:45:30,664: INFO: stage_01_load_save]: >>>>> stage one started
+[2022-02-10 01:45:30,666: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:45:30,670: INFO: all_utils]: directory is created at data/dog
+[2022-02-10 01:45:30,692: INFO: all_utils]: directory is created at data/cat
+[2022-02-10 01:45:30,708: INFO: stage_01_load_save]: stage one completed! all the data are saved in local >>>>>
+
+[2022-02-10 01:45:32,986: INFO: stage_02_prepare_base_model]: >>>>> stage two started
+[2022-02-10 01:45:32,987: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:45:32,988: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:45:33,240: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2022-02-10 01:45:33,292: INFO: models]: VGG16 base model saved at: artifacts/base_model/VGG16.h5
+[2022-02-10 01:45:33,302: INFO: models]: custom model is compiled and ready to be trained
+[2022-02-10 01:45:33,305: INFO: stage_02_prepare_base_model]: full model summary: 
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 224, 224, 3)]     0         
+                                                                 
+ block1_conv1 (Conv2D)       (None, 224, 224, 64)      1792      
+                                                                 
+ block1_conv2 (Conv2D)       (None, 224, 224, 64)      36928     
+                                                                 
+ block1_pool (MaxPooling2D)  (None, 112, 112, 64)      0         
+                                                                 
+ block2_conv1 (Conv2D)       (None, 112, 112, 128)     73856     
+                                                                 
+ block2_conv2 (Conv2D)       (None, 112, 112, 128)     147584    
+                                                                 
+ block2_pool (MaxPooling2D)  (None, 56, 56, 128)       0         
+                                                                 
+ block3_conv1 (Conv2D)       (None, 56, 56, 256)       295168    
+                                                                 
+ block3_conv2 (Conv2D)       (None, 56, 56, 256)       590080    
+                                                                 
+ block3_conv3 (Conv2D)       (None, 56, 56, 256)       590080    
+                                                                 
+ block3_pool (MaxPooling2D)  (None, 28, 28, 256)       0         
+                                                                 
+ block4_conv1 (Conv2D)       (None, 28, 28, 512)       1180160   
+                                                                 
+ block4_conv2 (Conv2D)       (None, 28, 28, 512)       2359808   
+                                                                 
+ block4_conv3 (Conv2D)       (None, 28, 28, 512)       2359808   
+                                                                 
+ block4_pool (MaxPooling2D)  (None, 14, 14, 512)       0         
+                                                                 
+ block5_conv1 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_conv2 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_conv3 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_pool (MaxPooling2D)  (None, 7, 7, 512)         0         
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 2)                 50178     
+                                                                 
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-02-10 01:45:33,356: INFO: stage_02_prepare_base_model]: stage two completed! base model is created >>>>>
+
+[2022-02-10 01:45:35,071: INFO: stage_03_prepare_callbacks]: >>>>> stage three started
+[2022-02-10 01:45:35,073: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:45:35,073: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:45:35,074: INFO: callbacks]: tensorboard callback is being saved at artifacts/callbacks/tensorboard_cb.cb
+[2022-02-10 01:45:35,075: INFO: callbacks]: tensorboard callback is being saved at artifacts/callbacks/checkpoint_cb.cb
+[2022-02-10 01:45:35,075: INFO: stage_03_prepare_callbacks]: stage three completed! callbacks are prepared and saved as binary>>>>>
+
+[2022-02-10 01:45:36,798: INFO: stage_04_train]: >>>>> stage four started
+[2022-02-10 01:45:36,800: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:45:36,801: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:45:36,983: INFO: models]: untrained model is read from: artifacts/base_model/updated_VGG16.h5
+[2022-02-10 01:45:36,983: INFO: callbacks]: saved callbacks are loaded from artifacts/callbacks
+[2022-02-10 01:45:36,987: INFO: data_management]: data augmentation is used for training
+[2022-02-10 01:45:36,991: INFO: data_management]: train and valid generator is created.
+[2022-02-10 01:46:17,501: INFO: stage_04_train]: training completed
+[2022-02-10 01:46:17,503: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:46:17,504: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:46:18,846: INFO: builder_impl]: Assets written to: /tmp/tmp6t3j9ch_/model/data/model/assets
+[2022-02-10 01:46:21,399: INFO: stage_04_train]: trained model is saved at: artifacts/model/model_v3.h5
+[2022-02-10 01:46:21,399: INFO: stage_04_train]: stage four completed! training completed and model is saved >>>>>
+
+
+[2022-02-10 01:46:45,169: INFO: stage_02_prepare_base_model]: >>>>> stage two started
+[2022-02-10 01:46:45,171: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:46:45,171: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:46:45,410: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2022-02-10 01:46:45,460: INFO: models]: VGG16 base model saved at: artifacts/base_model/VGG16.h5
+[2022-02-10 01:46:45,471: INFO: models]: custom model is compiled and ready to be trained
+[2022-02-10 01:46:45,473: INFO: stage_02_prepare_base_model]: full model summary: 
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 224, 224, 3)]     0         
+                                                                 
+ block1_conv1 (Conv2D)       (None, 224, 224, 64)      1792      
+                                                                 
+ block1_conv2 (Conv2D)       (None, 224, 224, 64)      36928     
+                                                                 
+ block1_pool (MaxPooling2D)  (None, 112, 112, 64)      0         
+                                                                 
+ block2_conv1 (Conv2D)       (None, 112, 112, 128)     73856     
+                                                                 
+ block2_conv2 (Conv2D)       (None, 112, 112, 128)     147584    
+                                                                 
+ block2_pool (MaxPooling2D)  (None, 56, 56, 128)       0         
+                                                                 
+ block3_conv1 (Conv2D)       (None, 56, 56, 256)       295168    
+                                                                 
+ block3_conv2 (Conv2D)       (None, 56, 56, 256)       590080    
+                                                                 
+ block3_conv3 (Conv2D)       (None, 56, 56, 256)       590080    
+                                                                 
+ block3_pool (MaxPooling2D)  (None, 28, 28, 256)       0         
+                                                                 
+ block4_conv1 (Conv2D)       (None, 28, 28, 512)       1180160   
+                                                                 
+ block4_conv2 (Conv2D)       (None, 28, 28, 512)       2359808   
+                                                                 
+ block4_conv3 (Conv2D)       (None, 28, 28, 512)       2359808   
+                                                                 
+ block4_pool (MaxPooling2D)  (None, 14, 14, 512)       0         
+                                                                 
+ block5_conv1 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_conv2 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_conv3 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_pool (MaxPooling2D)  (None, 7, 7, 512)         0         
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 2)                 50178     
+                                                                 
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-02-10 01:46:45,544: INFO: stage_02_prepare_base_model]: stage two completed! base model is created >>>>>
+
+[2022-02-10 01:46:47,274: INFO: stage_03_prepare_callbacks]: >>>>> stage three started
+[2022-02-10 01:46:47,276: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:46:47,276: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:46:47,277: INFO: callbacks]: tensorboard callback is being saved at artifacts/callbacks/tensorboard_cb.cb
+[2022-02-10 01:46:47,278: INFO: callbacks]: tensorboard callback is being saved at artifacts/callbacks/checkpoint_cb.cb
+[2022-02-10 01:46:47,278: INFO: stage_03_prepare_callbacks]: stage three completed! callbacks are prepared and saved as binary>>>>>
+
+[2022-02-10 01:46:48,075: INFO: stage_01_load_save]: >>>>> stage one started
+[2022-02-10 01:46:48,076: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:46:48,081: INFO: all_utils]: directory is created at data/dog
+[2022-02-10 01:46:48,103: INFO: all_utils]: directory is created at data/cat
+[2022-02-10 01:46:48,118: INFO: stage_01_load_save]: stage one completed! all the data are saved in local >>>>>
+
+[2022-02-10 01:46:50,506: INFO: stage_04_train]: >>>>> stage four started
+[2022-02-10 01:46:50,507: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:46:50,508: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:46:50,689: INFO: models]: untrained model is read from: artifacts/base_model/updated_VGG16.h5
+[2022-02-10 01:46:50,690: INFO: callbacks]: saved callbacks are loaded from artifacts/callbacks
+[2022-02-10 01:46:50,693: INFO: data_management]: data augmentation is used for training
+[2022-02-10 01:46:50,698: INFO: data_management]: train and valid generator is created.
+[2022-02-10 01:47:30,397: INFO: stage_04_train]: training completed
+[2022-02-10 01:47:30,399: INFO: all_utils]: yaml file: config/config.yaml loaded successfully
+[2022-02-10 01:47:30,400: INFO: all_utils]: yaml file: params.yaml loaded successfully
+[2022-02-10 01:47:31,707: INFO: builder_impl]: Assets written to: /tmp/tmp3rrek1ug/model/data/model/assets
+[2022-02-10 01:47:34,298: INFO: stage_04_train]: trained model is saved at: artifacts/model/model_v4.h5
+[2022-02-10 01:47:34,298: INFO: stage_04_train]: stage four completed! training completed and model is saved >>>>>
+
+

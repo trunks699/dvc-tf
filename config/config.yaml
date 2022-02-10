@@ -21,8 +21,8 @@ local_data:
 
 mlflow_config:
   ARTIFACTS_DIR: artifacts
-  EXPERIMENT_NAME: Cats_and_Dogs
+  EXPERIMENT_NAME: Road_Detection
   RUN_NAME: experimentation2
-  REMOTE_SERVER_URI: http://0.0.0.0:1234
+  REMOTE_SERVER_URI: http://0.0.0.0:5000
 
   

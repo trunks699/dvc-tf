@@ -1,9 +1,150 @@
-dvc
-tensorflow
-keras
-matplotlib
-numpy
-pandas
-tqdm
-PyYAML
-boto3
+absl-py @ file:///opt/conda/conda-bld/absl-py_1639803114343/work
+aiohttp @ file:///tmp/build/80754af9/aiohttp_1637856904808/work
+aiohttp-retry==2.4.6
+aiosignal @ file:///tmp/build/80754af9/aiosignal_1637843061372/work
+alembic==1.7.6
+appdirs==1.4.4
+astor==0.8.1
+astunparse==1.6.3
+async-timeout @ file:///tmp/build/80754af9/async-timeout_1637851218186/work
+asyncssh==2.8.1
+atpublic==3.0.1
+attrs @ file:///opt/conda/conda-bld/attrs_1642510447205/work
+blinker==1.4
+boto3==1.20.44
+botocore==1.23.44
+brotlipy==0.7.0
+cachetools @ file:///tmp/build/80754af9/cachetools_1619597386817/work
+certifi==2021.10.8
+cffi @ file:///opt/conda/conda-bld/cffi_1642701102775/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+clang==5.0
+click==8.0.3
+cloudpickle==2.0.0
+colorama==0.4.4
+commonmark==0.9.1
+configobj==5.0.6
+cryptography @ file:///tmp/build/80754af9/cryptography_1633520369886/work
+cycler==0.11.0
+databricks-cli==0.16.4
+dictdiffer==0.9.0
+diskcache==5.4.0
+distro==1.6.0
+docker==5.0.3
+dpath==2.0.5
+dulwich==0.20.32
+dvc==2.9.3
+entrypoints==0.4
+Flask==2.0.2
+flatbuffers==1.12
+flatten-dict==0.4.2
+flufl.lock==7.0
+fonttools==4.29.0
+frozenlist @ file:///tmp/build/80754af9/frozenlist_1637767113340/work
+fsspec==2022.1.0
+ftfy==6.0.3
+funcy==1.17
+future==0.18.2
+gast @ file:///Users/ktietz/demo/mc3/conda-bld/gast_1628588903283/work
+gitdb==4.0.9
+GitPython==3.1.26
+google-auth @ file:///tmp/build/80754af9/google-auth_1626320605116/work
+google-auth-oauthlib==0.4.1
+google-pasta @ file:///Users/ktietz/demo/mc3/conda-bld/google-pasta_1630577991354/work
+grandalf==0.6
+greenlet==1.1.2
+grpcio @ file:///tmp/build/80754af9/grpcio_1637590821884/work
+gunicorn==20.1.0
+h5py @ file:///tmp/build/80754af9/h5py_1637138488546/work
+idna @ file:///tmp/build/80754af9/idna_1637925883363/work
+importlib-metadata @ file:///tmp/build/80754af9/importlib-metadata_1638542770237/work
+itsdangerous==2.0.1
+Jinja2==3.0.3
+jmespath==0.10.0
+joblib==1.1.0
+keras==2.7.0
+Keras-Preprocessing @ file:///tmp/build/80754af9/keras-preprocessing_1612283640596/work
+kiwisolver==1.3.2
+libclang==13.0.0
+mailchecker==4.1.10
+Mako==1.1.6
+Markdown @ file:///tmp/build/80754af9/markdown_1614363852612/work
+MarkupSafe==2.0.1
+matplotlib==3.5.1
+mkl-fft==1.3.1
+mkl-random @ file:///tmp/build/80754af9/mkl_random_1626186066731/work
+mkl-service==2.4.0
+mlflow==1.23.1
+multidict @ file:///opt/conda/conda-bld/multidict_1640703752579/work
+nanotime==0.5.2
+networkx==2.6.3
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1634095651905/work
+oauthlib @ file:///tmp/build/80754af9/oauthlib_1623060228408/work
+opt-einsum @ file:///tmp/build/80754af9/opt_einsum_1621500238896/work
+packaging==21.3
+pandas==1.4.0
+pathspec==0.9.0
+phonenumbers==8.12.41
+Pillow==9.0.0
+ply==3.11
+prometheus-client==0.13.1
+prometheus-flask-exporter==0.18.7
+protobuf==3.14.0
+psutil==5.9.0
+pyasn1 @ file:///Users/ktietz/demo/mc3/conda-bld/pyasn1_1629708007385/work
+pyasn1-modules==0.2.8
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pydot==1.4.2
+pygit2==1.7.2
+Pygments==2.11.2
+pygtrie==2.4.2
+PyJWT @ file:///tmp/build/80754af9/pyjwt_1619682484438/work
+pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1635333100036/work
+pyparsing==3.0.7
+PySocks @ file:///tmp/build/80754af9/pysocks_1605305812635/work
+python-benedict==0.24.3
+python-dateutil==2.8.2
+python-fsutil==0.6.0
+python-slugify==5.0.2
+pytz==2021.3
+PyYAML==6.0
+querystring-parser==1.2.4
+requests @ file:///opt/conda/conda-bld/requests_1641824580448/work
+requests-oauthlib==1.3.0
+rich==11.0.0
+rsa @ file:///tmp/build/80754af9/rsa_1614366226499/work
+ruamel.yaml==0.17.20
+ruamel.yaml.clib==0.2.6
+s3transfer==0.5.0
+scipy @ file:///tmp/build/80754af9/scipy_1641555004408/work
+scmrepo==0.0.7
+shortuuid==1.0.8
+shtab==1.5.3
+six @ file:///tmp/build/80754af9/six_1623709665295/work
+smmap==5.0.0
+SQLAlchemy==1.4.31
+sqlparse==0.4.2
+-e git+ssh://git@github.com/trunks699/dvc-tf.git@2c78d22f9abb4a4447f8a63b5974260970d6f2fc#egg=src
+tabulate==0.8.9
+tensorboard @ file:///tmp/build/80754af9/tensorboard_1633093581375/work/tensorboard-2.6.0-py3-none-any.whl
+tensorboard-data-server @ file:///tmp/build/80754af9/tensorboard-data-server_1633034767313/work/tensorboard_data_server-0.6.0-py3-none-manylinux2010_x86_64.whl
+tensorboard-plugin-wit==1.6.0
+tensorflow @ file:///home/builder/adipietro/tf/tensorflow-base_1630518689952/work/tensorflow_pkg/tensorflow-2.6.0-cp39-cp39-linux_x86_64.whl
+tensorflow-estimator==2.7.0
+tensorflow-gpu==2.7.0
+tensorflow-io-gcs-filesystem==0.23.1
+termcolor==1.1.0
+text-unidecode==1.3
+toml==0.10.2
+tqdm==4.62.3
+typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1631814937681/work
+urllib3==1.26.7
+voluptuous==0.12.2
+wcwidth==0.2.5
+websocket-client==1.2.3
+Werkzeug @ file:///tmp/build/80754af9/werkzeug_1635505089296/work
+wrapt @ file:///tmp/build/80754af9/wrapt_1638433857881/work
+xmltodict==0.12.0
+yarl @ file:///tmp/build/80754af9/yarl_1606939947528/work
+zc.lockfile==2.0
+zipp @ file:///opt/conda/conda-bld/zipp_1641824620731/work

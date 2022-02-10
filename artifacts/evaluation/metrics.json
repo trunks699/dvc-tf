@@ -1,1 +1,1 @@
-{"Model_Name": "model_v1.h5", "train_set_samples": 230, "test_set_samples": 57, "Epochs": 2, "Learning_Rate": 0.01, "Batch_size": 20, "accuracy": 0.6142857074737549, "loss": 10.69945240020752, "val_accuracy": 0.125, "val_loss": 12.810928344726562}
+{"Model_Name": "model_v4.h5", "train_set_samples": 230, "test_set_samples": 57, "Epochs": 2, "Learning_Rate": 0.01, "Batch_size": 20, "accuracy": 0.5666666626930237, "loss": 14.09189224243164, "val_accuracy": 0.875, "val_loss": 4.245816707611084}
